@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>SalesAssist</title>
+<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+</head>
+<body>
+<h1> SalesAssist </h1>
+<div id="data" name="data" class="main">
+	<table class="t_main">
+		<tr class="t_row" id="t_label">
+			<td class="t_card" border="1">
+				<label> Credit Card </label>
+			</td>
+			<td>
+				<label> Amount per Month </label>
+			</td>
+			<td>
+				<label> Transactions per Month </label>
+			</td>
+			<td>
+				<label> Fees in percent </label>
+			</td>		
+		</tr>
+		<tr class="t_row" id="t_r1">
+			<td class="t_card" id="1_card">
+				<select class="d_select" id="1_select_card">
+					<!--#include file="cardmenu.html"-->
+				</select>
+			</td>
+			<td>
+				<input type="text" name="1_amount" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="1_transactions" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="1_fees" class="d_text" />
+			</td>		
+		</tr>
+		<tr class="t_row" id="t_r2">
+			<td class="t_card" id="2_card">
+				<select class="d_select" id="2_card">
+					<!--#include file="cardmenu.html"-->
+				</select>
+			</td>
+			<td>
+				<input type="text" name="2_amount" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="2_transactions" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="2_fees" class="d_text" />
+			</td>		
+		</tr>
+		<tr class="t_row" id="t_r3">
+			<td class="t_card" id="3_card">
+				<select class="d_select" id="3_card">
+					<!--#include file="cardmenu.html"-->
+				</select>
+			</td>
+			<td>
+				<input type="text" name="3_amount" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="3_transactions" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="3_fees" class="d_text" />
+			</td>		
+		</tr>
+		<tr class="t_row" id="t_r4">
+			<td class="t_card" id="4_card">
+				<select class="d_select" id="4_card">
+					<!--#include file="cardmenu.html"-->
+				</select>
+			</td>
+			<td>
+				<input type="text" name="4_amount" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="4_transactions" class="d_text" />
+			</td>
+			<td>
+				<input type="text" name="4_fees" class="d_text" />
+			</td>		
+		</tr>
+	</table>
+</div>
+<div class="chart" id="chart">
+	<div class="p_chart" id="p_chart">
+		Pie chart here!
+	</div>
+	<div class="h_chart" id="h_chart"></div>
+		Histogram here!
+	</div>
+</body>
+</html>
