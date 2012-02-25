@@ -2,11 +2,17 @@
 <html>
 <head>
 <title>SalesAssist</title>
-<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script>
+<link rel="stylesheet" href="js/jquery.mobile-1.0.1.css" /> 
+<script src="js/jquery-1.7.1.js"></script> 
+<script src="js/jquery.mobile-1.0.1.js"></script>
 </head>
 <body>
-<h1> SalesAssist </h1>
-<div id="data" name="data" class="main">
+<div data-role="header">
+		<h1> SalesAssist </h1>
+</div><!-- /header -->
+<div data-role="page" class="page">
+<div id="data" name="data" class="main" data-role="content">
 	<table class="t_main">
 		<tr class="t_row" id="t_label">
 			<td class="t_card" border="1">
@@ -100,12 +106,14 @@
 		</tr>
 	</table>
 </div>
-<div class="chart" id="chart">
+<div class="chart" id="chart" data-role="content">
 	<div class="p_chart" id="p_chart">
 		Pie chart here!
 	</div>
-	<div class="h_chart" id="h_chart"></div>
+	<div class="h_chart" id="h_chart">
 		Histogram here!
 	</div>
+</div>
+</div>
 </body>
 </html>
