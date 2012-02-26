@@ -24,6 +24,8 @@ var card = new Array(4);
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('p_chart'));
+		options['width'] = 250;
+        options['height'] = 200;
         chart.draw(data, options);
       }
     
@@ -42,6 +44,8 @@ var card = new Array(4);
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('h_chart'));
+		options['width'] = 290;
+        options['height'] = 300;
         chart.draw(data, options);
       }
     
