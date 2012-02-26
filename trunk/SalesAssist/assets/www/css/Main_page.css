@@ -1,0 +1,44 @@
+div.main
+{
+width:50%;
+height:85%; 
+}
+div.t_main
+{
+font-size:6pt;
+color:blue;
+position: left;
+position:fixed;
+top:40px;
+left:10px;
+}
+div.d_text
+{
+width:50px;
+height:100px;
+border:1px solid black;
+}
+div.t_row
+{
+font-size:6pt;
+color:blue;
+}
+div.h_chart
+{
+font-size:10pt;
+color:black;
+}
+div.chart
+{
+padding-top:50px;
+padding-bottom:25px;
+padding-right:50px;
+padding-left:5px;
+
+width: 30%;
+
+position:fixed;
+top:5px;
+right:115px;
+
+}
