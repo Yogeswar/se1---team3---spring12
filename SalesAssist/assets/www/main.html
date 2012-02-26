@@ -3,16 +3,30 @@
 <head>
 <title>SalesAssist</title>
 <script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script>
-<link rel="stylesheet" href="js/jquery.mobile-1.0.1.css" /> 
+<link rel="stylesheet" href="css/jquery.mobile-1.0.1.css" />
+<link rel="stylesheet" href="css/Main_page.css" /> 
 <script src="js/jquery-1.7.1.js"></script> 
 <script src="js/jquery.mobile-1.0.1.js"></script>
+<script src="js/SalesAssist.js"></script>
+
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+// Load the Visualization API and the piechart package.
+google.load('visualization', '1', {'packages':['corechart']});
+
+// Set a callback to run when the Google Visualization library is loaded.
+//google.setOnLoadCallback(drawPieChart);
+
+</script>
 </head>
 <body>
+
+<div data-role="page" class="page">
 <div data-role="header">
 		<h1> SalesAssist </h1>
 </div><!-- /header -->
-<div data-role="page" class="page">
-<div id="data" name="data" class="main" data-role="content">
+<div id="data" id="data" class="main" data-role="content">
 	<table class="t_main">
 		<tr class="t_row" id="t_label">
 			<td class="t_card" border="1">
@@ -29,82 +43,85 @@
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r1">
-			<td class="t_card" id="1_card">
-				<select class="d_select" id="1_select_card">
-					<option value="visa">VISA</option>
+			<td class="t_card" id="card1">
+				<select class="d_select" id="select_card_1">
+					<option value="visa" selected="selected">VISA</option>
 					<option value="mc">MasterCard</option>
 					<option value="Discover">Discover</option>
 					<option value="Amex">AMEX</option>
 				</select>
 			</td>
 			<td>
-				<input type="text" name="1_amount" class="d_text" />
+				<input type="text" id="amount1" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="1_transactions" class="d_text" />
+				<input type="text" id="transactions1" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="1_fees" class="d_text" />
+				<input type="text" id="fees1" class="d_text" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r2">
-			<td class="t_card" id="2_card">
-				<select class="d_select" id="2_card">
+			<td class="t_card" id="card2">
+				<select class="d_select" id="select_card_2">
 					<option value="visa">VISA</option>
-					<option value="mc">MasterCard</option>
+					<option value="mc" selected="selected">MasterCard</option>
 					<option value="Discover">Discover</option>
 					<option value="Amex">AMEX</option>
 				</select>
 			</td>
 			<td>
-				<input type="text" name="2_amount" class="d_text" />
+				<input type="text" id="amount2" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="2_transactions" class="d_text" />
+				<input type="text" id="transactions2" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="2_fees" class="d_text" />
+				<input type="text" id="fees2" class="d_text" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r3">
-			<td class="t_card" id="3_card">
-				<select class="d_select" id="3_card">
+			<td class="t_card" id="card3">
+				<select class="d_select" id="select_card_3">
 					<option value="visa">VISA</option>
 					<option value="mc">MasterCard</option>
-					<option value="Discover">Discover</option>
+					<option value="Discover" selected="selected">Discover</option>
 					<option value="Amex">AMEX</option>
 				</select>
 			</td>
 			<td>
-				<input type="text" name="3_amount" class="d_text" />
+				<input type="text" id="amount3" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="3_transactions" class="d_text" />
+				<input type="text" id="transactions3" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="3_fees" class="d_text" />
+				<input type="text" id="fees3" class="d_text" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r4">
-			<td class="t_card" id="4_card">
-				<select class="d_select" id="4_card">
+			<td class="t_card" id="card4">
+				<select class="d_select" id="select_card_4">
 					<option value="visa">VISA</option>
 					<option value="mc">MasterCard</option>
 					<option value="Discover">Discover</option>
-					<option value="Amex">AMEX</option>
+					<option value="Amex" selected="selected">AMEX</option>
 				</select>
 			</td>
 			<td>
-				<input type="text" name="4_amount" class="d_text" />
+				<input type="text" id="amount4" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="4_transactions" class="d_text" />
+				<input type="text" id="transactions4" class="d_text" value="0"/>
 			</td>
 			<td>
-				<input type="text" name="4_fees" class="d_text" />
+				<input type="text" id="fees4" class="d_text" value="0"/>
 			</td>		
 		</tr>
 	</table>
+	
+	<div id="total_fees"> </div>
+	<div id="Average_Ticket_Size"> </div>
 </div>
 <div class="chart" id="chart" data-role="content">
 	<div class="p_chart" id="p_chart">
@@ -115,5 +132,15 @@
 	</div>
 </div>
 </div>
+<script type="text/javascript">
+	$(".d_text").focusout(function(){
+		
+		loadValues();
+		calculate();
+		
+		drawPieChart();
+		drawHistogram();
+	});
+</script>
 </body>
 </html>
