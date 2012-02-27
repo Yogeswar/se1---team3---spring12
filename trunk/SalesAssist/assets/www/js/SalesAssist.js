@@ -103,9 +103,9 @@
     	
     	var Total_fees = fee_amt[0] + fee_amt[1] + fee_amt[2] + fee_amt[3];
     	current_expenses = Total_fees / Total * 100;
-    	current_expenses = current_expenses.toFixed(2);
+    	//current_expenses = current_expenses.toFixed(2);
     	projected_expenses = 0.8 * current_expenses;
-    	projected_expenses = projected_expenses.toFixed(2);
+    	//projected_expenses = projected_expenses.toFixed(2);
     }
     
     function Process(){
