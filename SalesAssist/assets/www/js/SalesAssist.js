@@ -23,7 +23,7 @@
         var options = {
         	title: 'Business Split-Up',
         	is3D: true,
-        	backgroundColor: 'white'
+        	backgroundColor: '#D5D5D5'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('p_chart'));
@@ -45,7 +45,7 @@
           title: 'Weighted Average of Fees paid',
           hAxis: {title: 'Current vs Projected', titleTextStyle: {color: 'red'}},
           is3D: true,
-          backgroundColor: 'white'
+          backgroundColor: '#D5D5D5'
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('h_chart'));
@@ -81,13 +81,14 @@
     	var i = 0;
     	Total = amount[0] + amount[1] + amount[2] + amount[3];
     	
-    	if(Total>0)
+    	if(Total > 0)
     		$("#total_fees").text("Total Business : $" + Total);
     	
     	var Total_trans = transactions[0]+transactions[1]+transactions[2]+transactions[3];
     	if (Total_trans > 0)
     	{
     	   	var Avg_ticket_size = Total / Total_trans;
+    	   	Avg_ticket_size = Avg_ticket_size.toFixed(2);
     	   	if (Avg_ticket_size > 0)
     	   		$("#Average_Ticket_Size").text("Average Ticket Size : $" + Avg_ticket_size);
     	}
