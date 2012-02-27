@@ -15,7 +15,7 @@ public class LocationCheck extends Plugin {
     public PluginResult execute(String action, JSONArray arg1, String arg2) {
         PluginResult.Status status = PluginResult.Status.OK;
         boolean result = false;
-        Log.d("gpsDetect", "Plugin Called");
+        Log.d(" gpsDetect", "Plugin Called");
         if (action.equals("gpsDetect")) {
             result = detectGPS();        
         }
