@@ -4,7 +4,7 @@ var card = new Array(4);
 	var fees = new Array(4);
 	var current_expenses;
 	var projected_expenses;
-	
+	var fee_amt = new Array(4);
     
     function drawPieChart() {
     
@@ -24,7 +24,7 @@ var card = new Array(4);
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('p_chart'));
-		options['width'] = 250;
+		options['width'] = 290;
         options['height'] = 200;
         chart.draw(data, options);
       }
@@ -32,10 +32,10 @@ var card = new Array(4);
     function drawHistogram() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Company');
-        data.addColumn('number', 'Current Expenses');
-        data.addColumn('number', 'Projected Expenses');
+        data.addColumn('number', 'Current Fees % ');
+        data.addColumn('number', 'Projected Fees in %');
         data.addRows([
-          ['Expenses', current_expenses, projected_expenses]
+          ['Fees', current_expenses, projected_expenses]
         ]);
 
         var options = {
@@ -74,11 +74,16 @@ var card = new Array(4);
     
     function calculate(){
     	var Total = amount[0] + amount[1] + amount[2] + amount[3];
-    	$("#total_fees").text("Total Fees : $" + Total);
+    	$("#total_fees").text("Total Business : $" + Total);
     	
-    	var Avg_ticket_size = amount[0] + amount[1] + amount[2] + amount[3];
+    	var Avg_ticket_size = Total / (transactions[0]+transactions[1]+transactions[2]+transactions[3]);
     	$("#Average_Ticket_Size").text("Average Ticket Size : $" + Avg_ticket_size);
     	
-    	current_expenses = Total;
-    	projected_expenses = 0.8 * Total;
+    	fee_amt[0] = amount[0] * fees[0] / 100;
+    	fee_amt[1] = amount[1] * fees[1] / 100;
+    	fee_amt[2] = amount[2] * fees[2] / 100;
+    	fee_amt[3] = amount[3] * fees[3] / 100;
+    	var Total_fees = fee_amt[0] + fee_amt[1] + fee_amt[2] + fee_amt[3];
+    	current_expenses = Total_fees / Total * 100;
+    	projected_expenses = 0.8 * current_expenses;
     }
