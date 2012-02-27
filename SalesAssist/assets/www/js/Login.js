@@ -17,8 +17,8 @@ function deviceReady() {
          $("#submitButton").removeAttr("disabled");
      },"json");
 }
- return false;
-}); */
+ return false; */
+}); 
      
 
 }

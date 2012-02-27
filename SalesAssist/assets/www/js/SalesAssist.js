@@ -1,4 +1,4 @@
-var card = new Array(4);
+	var card = new Array(4);
 	var amount = new Array(4);
 	var transactions = new Array(4);
 	var fees = new Array(4);
