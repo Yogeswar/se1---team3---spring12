@@ -83,7 +83,16 @@ var card = new Array(4);
     	fee_amt[1] = amount[1] * fees[1] / 100;
     	fee_amt[2] = amount[2] * fees[2] / 100;
     	fee_amt[3] = amount[3] * fees[3] / 100;
+    	
     	var Total_fees = fee_amt[0] + fee_amt[1] + fee_amt[2] + fee_amt[3];
     	current_expenses = Total_fees / Total * 100;
     	projected_expenses = 0.8 * current_expenses;
+    }
+    
+    function Process(){
+    	loadValues();
+		calculate();
+		
+		drawPieChart();
+		drawHistogram();
     }
