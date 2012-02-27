@@ -6,22 +6,23 @@
 <!--  Styling Sheets -->
 <link rel="stylesheet" href="css/jquery.mobile-1.0.1.css" />
 <link rel="stylesheet" href="css/Main_page.css" />
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
 
 <!--  Javascript Libraries -->
 <script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script> 
 <script src="js/jquery-1.7.1.js"></script> 
 <script src="js/jquery.mobile-1.0.1.js"></script>
-<script src="js/jquery.ui.ipad.js"></script>
-<script src="js/jquery-ui-1.8.7.custom.min.js"></script>
-<script src="js/jquery.mobile.carousel.js"></script>
+<script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+
 
 <script src="js/SalesAssist.js"></script>
-
 <!--Load the Google AJAX API-->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
 	// Load the Visualization API and the piechart package.
 	google.load('visualization', '1', {'packages':['corechart']});
+	
 </script>
 </head>
 <body>
@@ -31,6 +32,7 @@
 		<h1> SalesAssist </h1>
 </div><!-- /header -->
 <div id="data" id="data" class="main" data-role="content">
+	<form id="data_form">
 	<table class="t_main">
 		<tr class="t_row" id="t_label">
 			<td class="t_card" border="1">
@@ -56,13 +58,13 @@
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount1" class="d_text  d_change" value="0"/>
+				<input type="number" id="amount1" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions1" class="d_text d_change" value="0"/>
+				<input type="number" id="transactions1" class="validate[custom[integer],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees1" class="d_text d_change" value="0"/>
+				<input type="number" id="fees1" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r2">
@@ -75,13 +77,13 @@
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount2" class="d_text d_change" value="0"/>
+				<input type="number" id="amount2" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions2" class="d_text d_change" value="0"/>
+				<input type="number" id="transactions2" class="validate[custom[integer],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees2" class="d_text d_change" value="0"/>
+				<input type="number" id="fees2" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r3">
@@ -94,13 +96,13 @@
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount3" class="d_text d_change" value="0"/>
+				<input type="number" id="amount3" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions3" class="d_text d_change" value="0"/>
+				<input type="number" id="transactions3" class="validate[custom[integer],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees3" class="d_text d_change" value="0"/>
+				<input type="number" id="fees3" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r4">
@@ -113,38 +115,30 @@
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount4" class="d_text d_change" value="0"/>
+				<input type="number" id="amount4" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions4" class="d_text d_change" value="0"/>
+				<input type="number" id="transactions4" class="validate[custom[integer],min[0]] d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees4" class="d_text d_change" value="0"/>
+				<input type="number" id="fees4" class="validate[custom[number],min[0]] d_text  d_change" value="0"/>
 			</td>		
 		</tr>
 	</table>
-	
+	</form>
 	<div id="total_fees"> </div>
 	<div id="Average_Ticket_Size"> </div>
 </div>
-<div class="chart" id="chart" data-role="content" style="height: 300px; width: 500px">
-	<ul id="carousel" style="display: none;">
-        <li>
-        	<div class="p_chart" id="p_chart">
+<div class="chart" id="chart" data-role="content" style="height: 500px; width: 500px">
+	    	<div class="p_chart" id="p_chart">
 			</div>
-		</li>
-        <li>
-        	<div class="h_chart" id="h_chart">
+	    	<div class="h_chart" id="h_chart">
 			</div>
-		</li>
-    </ul>
 	</div>
 </div>
 <script type="text/javascript">
-	(function($) {
-    	$("#carousel").carousel();
-    })(jQuery);
-	
+$("#data_form").validationEngine('attach');
+
 	$(".d_change").change(function(){	
 		Process();
 	});

@@ -5,6 +5,7 @@
 	var current_expenses;
 	var projected_expenses;
 	var fee_amt = new Array(4);
+	var Total;
     
     function drawPieChart() {
     
@@ -20,11 +21,13 @@
         ]);
 
         var options = {
-          title: 'Business Split-Up'
+        	title: 'Business Split-Up',
+        	is3D: true,
+        	backgroundColor: '#C1CDCD'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('p_chart'));
-		options['width'] = 290;
+		options['width'] = 400;
         options['height'] = 200;
         chart.draw(data, options);
       }
@@ -40,11 +43,13 @@
 
         var options = {
           title: 'Weighted Average of Fees paid',
-          hAxis: {title: 'Current vs Projected', titleTextStyle: {color: 'red'}}
+          hAxis: {title: 'Current vs Projected', titleTextStyle: {color: 'red'}},
+          is3D: true,
+          backgroundColor: '#C1CDCD'
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('h_chart'));
-		options['width'] = 290;
+		options['width'] = 400;
         options['height'] = 300;
         chart.draw(data, options);
       }
@@ -73,12 +78,23 @@
     }
     
     function calculate(){
-    	var Total = amount[0] + amount[1] + amount[2] + amount[3];
-    	$("#total_fees").text("Total Business : $" + Total);
+    	var i = 0;
+    	Total = amount[0] + amount[1] + amount[2] + amount[3];
     	
-    	var Avg_ticket_size = Total / (transactions[0]+transactions[1]+transactions[2]+transactions[3]);
-    	$("#Average_Ticket_Size").text("Average Ticket Size : $" + Avg_ticket_size);
+    	if(Total>0)
+    		$("#total_fees").text("Total Business : $" + Total);
     	
+    	var Total_trans = transactions[0]+transactions[1]+transactions[2]+transactions[3];
+    	if (Total_trans > 0)
+    	{
+    	   	var Avg_ticket_size = Total / Total_trans;
+    	   	if (Avg_ticket_size > 0)
+    	   		$("#Average_Ticket_Size").text("Average Ticket Size : $" + Avg_ticket_size);
+    	}
+    	else
+    	{
+    		$("#Average_Ticket_Size").text(" ");
+    	}
     	fee_amt[0] = amount[0] * fees[0] / 100;
     	fee_amt[1] = amount[1] * fees[1] / 100;
     	fee_amt[2] = amount[2] * fees[2] / 100;
@@ -93,6 +109,9 @@
     	loadValues();
 		calculate();
 		
-		drawPieChart();
-		drawHistogram();
+		if(Total > 0)
+			drawPieChart();
+		
+		if(current_expenses > 0)
+			drawHistogram();
     }
