@@ -2,22 +2,22 @@
 <html>
 <head>
 <title>SalesAssist</title>
-<script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script>
+
+<!--  Styling Sheets -->
 <link rel="stylesheet" href="css/jquery.mobile-1.0.1.css" />
-<link rel="stylesheet" href="css/Main_page.css" /> 
+<link rel="stylesheet" href="css/Main_page.css" />
+
+<!--  Javascript Libraries -->
+<script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script> 
 <script src="js/jquery-1.7.1.js"></script> 
 <script src="js/jquery.mobile-1.0.1.js"></script>
 <script src="js/SalesAssist.js"></script>
 
-<!--Load the AJAX API-->
+<!--Load the Google AJAX API-->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-// Load the Visualization API and the piechart package.
-google.load('visualization', '1', {'packages':['corechart']});
-
-// Set a callback to run when the Google Visualization library is loaded.
-//google.setOnLoadCallback(drawPieChart);
-
+	// Load the Visualization API and the piechart package.
+	google.load('visualization', '1', {'packages':['corechart']});
 </script>
 </head>
 <body>
@@ -44,7 +44,7 @@ google.load('visualization', '1', {'packages':['corechart']});
 		</tr>
 		<tr class="t_row" id="t_r1">
 			<td class="t_card" id="card1">
-				<select class="d_select" id="select_card_1">
+				<select class="d_select d_change" id="select_card_1">
 					<option value="visa" selected="selected">VISA</option>
 					<option value="mc">MasterCard</option>
 					<option value="Discover">Discover</option>
@@ -52,18 +52,18 @@ google.load('visualization', '1', {'packages':['corechart']});
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount1" class="d_text" value="0"/>
+				<input type="number" id="amount1" class="d_text  d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions1" class="d_text" value="0"/>
+				<input type="number" id="transactions1" class="d_text d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees1" class="d_text" value="0"/>
+				<input type="number" id="fees1" class="d_text d_change" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r2">
 			<td class="t_card" id="card2">
-				<select class="d_select" id="select_card_2">
+				<select class="d_select d_change" id="select_card_2">
 					<option value="visa">VISA</option>
 					<option value="mc" selected="selected">MasterCard</option>
 					<option value="Discover">Discover</option>
@@ -71,18 +71,18 @@ google.load('visualization', '1', {'packages':['corechart']});
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount2" class="d_text" value="0"/>
+				<input type="number" id="amount2" class="d_text d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions2" class="d_text" value="0"/>
+				<input type="number" id="transactions2" class="d_text d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees2" class="d_text" value="0"/>
+				<input type="number" id="fees2" class="d_text d_change" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r3">
 			<td class="t_card" id="card3">
-				<select class="d_select" id="select_card_3">
+				<select class="d_select d_change" id="select_card_3">
 					<option value="visa">VISA</option>
 					<option value="mc">MasterCard</option>
 					<option value="Discover" selected="selected">Discover</option>
@@ -90,18 +90,18 @@ google.load('visualization', '1', {'packages':['corechart']});
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount3" class="d_text" value="0"/>
+				<input type="number" id="amount3" class="d_text d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions3" class="d_text" value="0"/>
+				<input type="number" id="transactions3" class="d_text d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees3" class="d_text" value="0"/>
+				<input type="number" id="fees3" class="d_text d_change" value="0"/>
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r4">
 			<td class="t_card" id="card4">
-				<select class="d_select" id="select_card_4">
+				<select class="d_select d_change" id="select_card_4">
 					<option value="visa">VISA</option>
 					<option value="mc">MasterCard</option>
 					<option value="Discover">Discover</option>
@@ -109,13 +109,13 @@ google.load('visualization', '1', {'packages':['corechart']});
 				</select>
 			</td>
 			<td>
-				<input type="number" id="amount4" class="d_text" value="0"/>
+				<input type="number" id="amount4" class="d_text d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="transactions4" class="d_text" value="0"/>
+				<input type="number" id="transactions4" class="d_text d_change" value="0"/>
 			</td>
 			<td>
-				<input type="number" id="fees4" class="d_text" value="0"/>
+				<input type="number" id="fees4" class="d_text d_change" value="0"/>
 			</td>		
 		</tr>
 	</table>
@@ -133,13 +133,12 @@ google.load('visualization', '1', {'packages':['corechart']});
 </div>
 </div>
 <script type="text/javascript">
-	$(".d_text").focusout(function(){
-		
-		loadValues();
-		calculate();
-		
-		drawPieChart();
-		drawHistogram();
+	$(".d_change").change(function(){	
+		Process();
+	});
+	
+	$(".d_change").keyup(function(){
+		Process();
 	});
 </script>
 </body>
