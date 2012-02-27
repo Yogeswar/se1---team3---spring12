@@ -23,7 +23,7 @@
         var options = {
         	title: 'Business Split-Up',
         	is3D: true,
-        	backgroundColor: '#D5D5D5'
+        	backgroundColor: '#E0E0E0'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('p_chart'));
