@@ -1,5 +1,6 @@
 function deviceReady() {
 
+	$("#loginForm").validationEngine('attach');
  $("#loginForm").on("submit",function(e) {
 	 
      //disable the button so we can't resubmit while we wait
