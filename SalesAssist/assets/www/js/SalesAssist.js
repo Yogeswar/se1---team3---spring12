@@ -45,7 +45,7 @@
           title: 'Weighted Average of Fees paid',
           hAxis: {title: 'Current vs Projected', titleTextStyle: {color: 'red'}},
           is3D: true,
-          backgroundColor: '#D5D5D5'
+          backgroundColor: '#E0E0E0'
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('h_chart'));
@@ -103,7 +103,9 @@
     	
     	var Total_fees = fee_amt[0] + fee_amt[1] + fee_amt[2] + fee_amt[3];
     	current_expenses = Total_fees / Total * 100;
+    	current_expenses = current_expenses.toFixed(2);
     	projected_expenses = 0.8 * current_expenses;
+    	projected_expenses = projected_expenses.toFixed(2);
     }
     
     function Process(){
