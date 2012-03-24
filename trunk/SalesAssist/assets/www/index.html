@@ -14,11 +14,11 @@
 <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
-  document.addEventListener("deviceready", deviceReady, false);
+//  document.addEventListener("deviceready", deviceReady, false);
   
 </script>
 </head>
-<body>
+<body onload="init()">
 <div id="loginPage" data-role="page">
 
     <div data-role="header">
@@ -43,5 +43,12 @@
         
     </div>
 </div>
+
+<script type="text/javascript">
+	$("#loginpage").live("pageinit",function(e){
+		checkPreAuth();
+	});
+</script>
+	
 </body>
 </html>
