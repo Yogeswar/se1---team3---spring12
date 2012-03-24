@@ -3,6 +3,11 @@ div.main
 width:50%;
 height:85%; 
 }
+div.s_main
+{
+	width:300px;
+	border-collapse: separate;
+}
 div.t_main
 {
 font-size:6pt;

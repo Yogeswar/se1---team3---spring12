@@ -33,35 +33,35 @@
 </div><!-- /header -->
 <div id="data" id="data" class="main" data-role="content">
 <div id="cust_data" class="cust_data">
-<table>
+<table class="s_main">
+		<tr>
+			<th align="left">Business Name</th>
+			<th align="left">Contact</th>
+			<th align="left">Phone Number</th>
+		</tr>
 		<tr class="cust_row" id="cust_row">
 			<td>
 				<input type="text" id="Business" class="" value="" placeholder="Business"/>
 			</td>
-			<td>
-				<input type="text" id="contact" class="" value="" placeholder="Contact"/>
+			<td >
+				<input type="text" id="Contact" class="" value="" placeholder="Contact"/>
 			</td>
-			<td>
-				<input type="number" id="phone" class="validate[,custom[number],min[0]]" value="" placeholder="Phone No." />
+			<td >
+				<input type="number" id="Phone" class="" value="" placeholder="Phone No." />
 			</td>		
 		</tr>
 </table>
 </div>
+<p></p>
+<fieldset>
+<legend><font size="5">Business Profile</font></legend>
 	<form id="data_form">
 	<table class="t_main">
 		<tr class="t_row" id="t_label">
-			<td class="t_card" border="1">
-				<label> Credit Card </label>
-			</td>
-			<td>
-				<label> Amount per Month </label>
-			</td>
-			<td>
-				<label> Transactions per Month </label>
-			</td>
-			<td>
-				<label> Fees in percent </label>
-			</td>		
+			<th>Credit Card</th>
+			<th>Amount per Month</th>
+			<th>Transactions per Month</th>
+			<th>Fees in Percent</th>
 		</tr>
 		<tr class="t_row" id="t_r1">
 			<td class="t_card" id="card1">
@@ -141,14 +141,18 @@
 		</tr>
 	</table>
 	</form>
-	<div id="total_fees"> </div>
-	<div id="Average_Ticket_Size"> </div>
+	<div id="total_fees"><font size="4" face="arial"></font> </div>
+	<div id="Average_Ticket_Size"><font size="4" face="arial"></font> </div>
+</fieldset>
 </div>
+
 <div class="chart" id="chart" data-role="content" style="height: 500px; width: 500px">
-	    	<div class="p_chart" id="p_chart">
-			</div>
-	    	<div class="h_chart" id="h_chart">
-			</div>
+	    <p><font size="5" color="blue">Analysis Charts</font></p>
+	    <div class="p_chart" id="p_chart">
+		</div>
+		<p></p>
+	    <div class="h_chart" id="h_chart">
+		</div>
 	</div>
 </div>
 <script type="text/javascript">
