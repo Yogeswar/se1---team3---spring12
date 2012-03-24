@@ -35,7 +35,7 @@ color:black;
 }
 div.chart
 {
-padding-top:50px;
+padding-top:23px;
 padding-bottom:25px;
 padding-right:50px;
 padding-left:5px;
@@ -43,7 +43,7 @@ padding-left:5px;
 width: 30%;
 
 position:fixed;
-top:5px;
-left:60%;
+top:20px;
+left:53%;
 
 }
