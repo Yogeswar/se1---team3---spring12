@@ -24,32 +24,32 @@
         <h1>Sales Assist</h1>
     </div>
 
-    <div data-role="content">
-    <p align="center">
-    <font size="14" face="verdana">Welcome to Sales Assist</font>
-    </p> 
-    <p></p>  
-	<fieldset>
-		<form name="loginform" method="post" autocomplete="off">
-		<p>
-			<label for="username" class="label">Username:</label>
-			<input id="username" name="username" type="text" class="validate[required]" value="" placeholder="Username" />
-		</p>
-		<p>
-			<label for="password" class="label">Password:</label>
-			<input id="password" name="password" type="password" class="validate[required]" value="" placeholder="Password" />
-		</p>
-		<p></p>
-		<p>
-			<input type="submit" name="submit" value="Login" class="left"/>
-		</p>	
-		</form>
-	</fieldset>
-	<div id="debug">
-		debug : 
-	</div>
-	<img src="images/ayoka_logo.JPG" align="bottom" border="0" />
-	</div>
+    
+    
+		<div data-role="content">    
+			<p align="center">
+    			<font size="14" face="verdana">Welcome to Sales Assist</font>
+    		</p> 
+    		<p></p>  
+	
+        	<form id="loginForm" method="post" autocomplete="off">
+        		<div data-role="fieldcontain" class="ui-hide-label">
+            		<label for="username">Username:</label>
+           			<input type="text" name="username" id="username" class="validate[required]" value="" placeholder="Username" />
+        		</div>
+
+        		<div data-role="fieldcontain" class="ui-hide-label">
+            		<label for="password">Password:</label>
+            		<input type="password" name="password" id="password" class="validate[required]" value="" placeholder="Password" />
+        		</div>
+
+        		<input type="submit" value="Login" id="submitButton">
+        	</form>
+    		<div id="debug">
+				debug
+    		</div>    
+    		<img src="images/ayoka_logo.JPG" align="bottom" border="0" />
+		</div>
 </div>
 
 <script type="text/javascript">
