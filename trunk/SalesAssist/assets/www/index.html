@@ -1,9 +1,12 @@
-<!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html>
 <head>
-<title>SalesAssist</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Create a nice login form using CSS3 and HTML5</title>
+
 <script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script>
-<link rel="stylesheet" href="css/jquery.mobile-1.0.1.css" />
+
 <link rel="stylesheet" href="css/index_page.css" />
 <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
  
@@ -13,49 +16,80 @@
 <script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/javascript">
-//  document.addEventListener("deviceready", deviceReady, false);
-  
-</script>
+
+
+
+
+
+	<script>
+		$(function() {   
+		
+			var theWindow        = $(window),
+			    $bg              = $("#bg"),
+			    aspectRatio      = $bg.width() / $bg.height();
+			    			    		
+			function resizeBg() {
+				
+				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgheight');
+				} else {
+				    $bg
+				    	.removeClass()
+				    	.addClass('bgwidth');
+				}
+							
+			}
+			                   			
+			theWindow.resize(function() {
+				resizeBg();
+			}).trigger("resize");
+		
+		});
+	</script>
+
+
+
 </head>
+
+
+
 <body onload="init()">
-<div id="loginPage" data-role="page">
-    <div data-role="header">
-        <h1>Sales Assist</h1>
-    </div>
+<img src="images/12.jpg" id="bg" alt="">
+<form id="loginForm" name="loginForm"  method="post" autocomplete=off>
 
-    
-    
-		<div data-role="content">    
-			<p align="center">
-    			<font size="14" face="verdana">Welcome to Sales Assist</font>
-    		</p> 
-    		<p></p>  
-	
-        	<form id="loginForm" method="post" autocomplete="off">
-        		<div data-role="fieldcontain" class="ui-hide-label">
-            		<label for="username">Username:</label>
-           			<input type="text" name="username" id="username" class="validate[required]" value="" placeholder="Username" />
-        		</div>
 
-        		<div data-role="fieldcontain" class="ui-hide-label">
-            		<label for="password">Password:</label>
-            		<input type="password" name="password" id="password" class="validate[required]" value="" placeholder="Password" />
-        		</div>
 
-        		<input type="submit" value="Login" id="submitButton">
-        	</form>
-    		<div id="debug">
-				debug
-    		</div>    
-    		<img src="images/ayoka_logo.JPG" align="bottom" border="0" />
-		</div>
-</div>
+    <h1>Log In</h1>
 
-<script type="text/javascript">
-	$("#loginpage").live("pageinit",function(e){
-		checkPreAuth();
-	});
-</script>
+    <fieldset id="inputs">
+
+        <input id="username" type="text" placeholder="Username" autofocus required class="validate[required]">   
+
+        <input id="password" type="password" placeholder="Password" required class="validate[required]">
+
+    </fieldset>
+
+    <fieldset id="actions">
+
+        <input type="submit" id="submitButton" value="Log in" action="index.html">
+
+        <a href="">Forgot your password?</a><a href="main.html">Register</a>
+
+    </fieldset>
+
+<div id="message"></div>
+</form>
+
+<div> id="debug"></div>
+
+<!-- BSA AdPacks code -->
+
+
+
+
 </body>
+
 </html>
+

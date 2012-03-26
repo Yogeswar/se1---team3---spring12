@@ -16,6 +16,8 @@ function Login()
      $("#debug").append("login");
      var user = $("#username", this).val();
      var pwd = $("#password", this).val();
+     latitude = -67.53;
+     longitude = 107.23;
      if(user != '' && pwd != '') 
      {	
     	 $("#debug").append(location.latitude + location.longitude);
@@ -24,7 +26,9 @@ function Login()
     		navigator.notification.alert("An AJAX error occured: " + status + "\nError: " + error + "response" + xhr.responseText);
     		  }
     		});
-    	 $.post("http://10.0.2.2:8081/SalesAssist/login.php", {username:user,password:pwd,lat:location.latitude,long:location.longitude}, function(result) {
+    	 $.post("http://10.0.2.2:8081/SalesAssist/login.php", 
+    			{username:user,password:pwd,lat:latitude,long:longitude}, 
+    		function(result) {
     		 if(result.login == 'true') 
     		 {
     			 window.localStorage["username"] = user;
@@ -76,7 +80,9 @@ function getLocation() {
          $("#debug").append("  in getlocation success");
     };
     var fail = function(e) {
-    	navigator.notification.alert("Please Switch on the Location Services", function() { navigator.app.exitApp(); }, "Location Required", "Close");
+    	navigator.notification.alert("Please Switch on the Location Services", function() {
+    	//navigator.app.exitApp(); 
+    	}, "Location Required", "Close");
     	
     };
     navigator.geolocation.getCurrentPosition(success, fail);
