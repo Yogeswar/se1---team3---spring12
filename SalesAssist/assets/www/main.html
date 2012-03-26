@@ -56,7 +56,7 @@
 <fieldset>
 <legend><font size="5">Business Profile</font></legend>
 	<form id="data_form">
-	<table class="t_main">
+	<table class="t_main" align="center">
 		<tr class="t_row" id="t_label">
 			<th>Credit Card</th>
 			<th>Amount per Month</th>
@@ -139,9 +139,23 @@
 				<input type="number" id="fees4" class="validate[required,custom[number],min[0]] d_text  d_change" value="0" />
 			</td>		
 		</tr>
+		<tr class="t_row" id="t_r5" align="center">
+			<td align="center">
+				<div><b>Total : </b></div>
+			</td>
+			<td align="center">
+				<div id="total_buss"></div>
+			</td>
+			<td align="center">
+				<div id="total_trans"></div>
+			</td>
+			<td align="center">
+				<div id="Avg_fees_percent"></div>
+			</td>		
+		</tr>
 	</table>
 	</form>
-	<div id="total_fees"><font size="4" face="arial"></font> </div>
+	<div id="total_buss"><font size="4" face="arial"></font> </div>
 	<div id="Average_Ticket_Size"><font size="4" face="arial"></font> </div>
 </fieldset>
 </div>
