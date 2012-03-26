@@ -109,14 +109,15 @@
     	
     	current_expenses = Total_fees / Total * 100;
     	//current_expenses = current_expenses.toFixed(2);
-    	$("#Avg_fees_percent").text(current_expenses.toFixed(2) + "%");
+    	if(current_expenses >= 0)
+    		$("#Avg_fees_percent").text(current_expenses.toFixed(2) + "%");
     	
     	projected_expenses = 0.8 * current_expenses;	
     	//projected_expenses = projected_expenses.toFixed(2);
     }
     
     function Process(){
-    	$("#total_buss").text("In Process");
+    	//$("#total_buss").text("In Process");
     	loadValues();
 		calculate();
 		
