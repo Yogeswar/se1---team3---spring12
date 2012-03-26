@@ -2,8 +2,6 @@ var location;
 
 function init() 
 {
-	getLocation();
-	$("#debug").append(location.latitude + location.longitude);
 	document.addEventListener("deviceready", deviceReady, true);
 	delete init;
 }
@@ -67,6 +65,7 @@ function deviceReady()
 {
 	$("#loginForm").validationEngine('attach');
 	$("#loginForm").on("submit",Login);
+	getLocation();
 }
 
 function getLocation() {
@@ -77,8 +76,8 @@ function getLocation() {
          $("#debug").append("  in getlocation success");
     };
     var fail = function(e) {
-    	$("#debug").append("  in getlocation failure");
-    	navigator.notification.alert("Please Switch on the Location Services", function() {});
+    	navigator.notification.alert("Please Switch on the Location Services", function() { navigator.app.exitApp(); }, "Location Required", "Close");
+    	
     };
     navigator.geolocation.getCurrentPosition(success, fail);
 } 
