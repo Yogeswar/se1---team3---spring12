@@ -1,5 +1,9 @@
+var location;
+
 function init() 
 {
+	getLocation();
+	$("#debug").append(location.latitude + location.longitude);
 	document.addEventListener("deviceready", deviceReady, true);
 	delete init;
 }
@@ -16,17 +20,19 @@ function Login()
      var pwd = $("#password", this).val();
      if(user != '' && pwd != '') 
      {	
+    	 $("#debug").append(location.latitude + location.longitude);
     	 $.ajaxSetup({
     		  error: function(xhr, status, error) {
     		navigator.notification.alert("An AJAX error occured: " + status + "\nError: " + error + "response" + xhr.responseText);
     		  }
     		});
-    	 $.post("http://10.0.2.2:8081/SalesAssist/login.php", {username:user,password:pwd}, function(result) {
+    	 $.post("http://10.0.2.2:8081/SalesAssist/login.php", {username:user,password:pwd,lat:location.latitude,long:location.longitude}, function(result) {
     		 if(result.login == 'true') 
     		 {
     			 window.localStorage["username"] = user;
     			 window.localStorage["password"] = pwd;
-    			 $.mobile.changePage("main.html");
+    			 window.location = "main.html";
+    			 //$.mobile.changePage("main.html");
     		 } 
     		 else 
     		 {
@@ -62,3 +68,17 @@ function deviceReady()
 	$("#loginForm").validationEngine('attach');
 	$("#loginForm").on("submit",Login);
 }
+
+function getLocation() {
+	$("#debug").append("  in getlocation");
+	
+    var success = function(position) {                          
+         location = position.coords;
+         $("#debug").append("  in getlocation success");
+    };
+    var fail = function(e) {
+    	$("#debug").append("  in getlocation failure");
+    	navigator.notification.alert("Please Switch on the Location Services", function() {});
+    };
+    navigator.geolocation.getCurrentPosition(success, fail);
+} 

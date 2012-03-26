@@ -56,24 +56,24 @@
     
     function loadValues(){
     	card[0] = $("#select_card_1").val();
-		amount[0] = parseInt($("#amount1").val());
+		amount[0] = parseFloat($("#amount1").val());
 		transactions[0] = parseInt($("#transactions1").val());
-		fees[0] = parseInt($("#fees1").val());
+		fees[0] = parseFloat($("#fees1").val());
 
 		card[1] = $("#select_card_2").val();
-		amount[1] = parseInt($("#amount2").val());
+		amount[1] = parseFloat($("#amount2").val());
 		transactions[1] = parseInt($("#transactions2").val());
-		fees[1] = parseInt($("#fees2").val());
+		fees[1] = parseFloat($("#fees2").val());
 		
 		card[2] = $("#select_card_3").val();
-		amount[2] = parseInt($("#amount3").val());
+		amount[2] = parseFloat($("#amount3").val());
 		transactions[2] = parseInt($("#transactions3").val());
-		fees[2] = parseInt($("#fees3").val());
+		fees[2] = parseFloat($("#fees3").val());
 		
 		card[3] = $("#select_card_4").val();
-		amount[3] = parseInt($("#amount4").val());
+		amount[3] = parseFloat($("#amount4").val());
 		transactions[3] = parseInt($("#transactions4").val());
-		fees[3] = parseInt($("#fees4").val());
+		fees[3] = parseFloat($("#fees4").val());
 
     }
     
@@ -82,11 +82,13 @@
     	Total = amount[0] + amount[1] + amount[2] + amount[3];
     	
     	if(Total > 0)
-    		$("#total_fees").text("Total Business : $" + Total);
+    		$("#total_buss").text("$" + Total.toFixed(2));
     	
     	var Total_trans = transactions[0]+transactions[1]+transactions[2]+transactions[3];
+    	
     	if (Total_trans > 0)
     	{
+    		$("#total_trans").text(Total_trans);
     	   	var Avg_ticket_size = Total / Total_trans;
     	   	Avg_ticket_size = Avg_ticket_size.toFixed(2);
     	   	if (Avg_ticket_size > 0)
@@ -94,21 +96,27 @@
     	}
     	else
     	{
+    		$("#total_trans").text("0");
     		$("#Average_Ticket_Size").text(" ");
     	}
-    	fee_amt[0] = amount[0] * fees[0] / 100;
-    	fee_amt[1] = amount[1] * fees[1] / 100;
-    	fee_amt[2] = amount[2] * fees[2] / 100;
-    	fee_amt[3] = amount[3] * fees[3] / 100;
     	
-    	var Total_fees = fee_amt[0] + fee_amt[1] + fee_amt[2] + fee_amt[3];
+    	fee_amt[0] = parseFloat(amount[0] * fees[0] / 100);
+    	fee_amt[1] = parseFloat(amount[1] * fees[1] / 100);
+    	fee_amt[2] = parseFloat(amount[2] * fees[2] / 100);
+    	fee_amt[3] = parseFloat(amount[3] * fees[3] / 100);
+    	
+    	var Total_fees = parseFloat(fee_amt[0] + fee_amt[1] + fee_amt[2] + fee_amt[3]);
+    	
     	current_expenses = Total_fees / Total * 100;
     	//current_expenses = current_expenses.toFixed(2);
-    	projected_expenses = 0.8 * current_expenses;
+    	$("#Avg_fees_percent").text(current_expenses.toFixed(2) + "%");
+    	
+    	projected_expenses = 0.8 * current_expenses;	
     	//projected_expenses = projected_expenses.toFixed(2);
     }
     
     function Process(){
+    	$("#total_buss").text("In Process");
     	loadValues();
 		calculate();
 		
