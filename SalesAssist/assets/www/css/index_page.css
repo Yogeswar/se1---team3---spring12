@@ -4,6 +4,7 @@ html, body
 {
     height: 100%;
 }
+
 body
 {
     font: 12px 'Lucida Sans Unicode', 'Trebuchet MS', Arial, Helvetica;    
@@ -22,7 +23,9 @@ body
 
     background-image: -o-linear-gradient(top, #ebeef2, #d9dee2);
 
-    background-image: linear-gradient(top, #ebeef2, #d9dee2);    
+    background-image: linear-gradient(top, #ebeef2, #d9dee2);
+    
+    background: url(images/bg.jpg) no-repeat center center fixed;    
 
 }
 
