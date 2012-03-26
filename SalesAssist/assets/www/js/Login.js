@@ -79,11 +79,13 @@ function getLocation() {
          location = position.coords;
          //$("#debug").append("  in getlocation success");
     };
+    
     var fail = function(e) {
     	navigator.notification.alert("Please Switch on the Location Services", function() {
     	//navigator.app.exitApp(); 
     	}, "Location Required", "Close");
     	
     };
+    
     navigator.geolocation.getCurrentPosition(success, fail);
 } 
