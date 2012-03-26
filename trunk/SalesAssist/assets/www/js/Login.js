@@ -13,20 +13,19 @@ function Login()
      //disable the Submit button so we can't resubmit while we wait
      $("#submitButton",this).attr("disabled","disabled");
      // window.location = "main.html";
-     $("#debug").append("login");
      var user = $("#username", this).val();
      var pwd = $("#password", this).val();
      latitude = -67.53;
      longitude = 107.23;
      if(user != '' && pwd != '') 
      {	
-    	 $("#debug").append(location.latitude + location.longitude);
+    	 //$("#debug").append(location.latitude + location.longitude);
     	 $.ajaxSetup({
     		  error: function(xhr, status, error) {
     		navigator.notification.alert("An AJAX error occured: " + status + "\nError: " + error + "response" + xhr.responseText);
     		  }
     		});
-    	 $.post("http://10.0.2.2:8081/SalesAssist/login.php", 
+    	 $.post("http://sales3.web44.net/login.php", 
     			{username:user,password:pwd,lat:latitude,long:longitude}, 
     		function(result) {
     		 if(result.login == 'true') 
@@ -38,7 +37,7 @@ function Login()
     		 } 
     		 else 
     		 {
-    			 navigator.notification.alert("Your login failed", function() {});
+    			 navigator.notification.alert("Your login failed" + result.login , function() {});
     		 }
     		 $("#submitButton").removeAttr("disabled");
     	 },"json");
@@ -60,24 +59,25 @@ function checkPreAuth()
 		{
 		 	$("#username", form).val(window.localStorage["username"]);
 		 	$("#password", form).val(window.localStorage["password"]);
-		 	Login();
+		 	//Login();
 		}
 	}
 }
 
 function deviceReady()
 {
-	$("#loginForm").validationEngine('attach');
+	//$("#loginForm").validationEngine('attach');
 	$("#loginForm").on("submit",Login);
-	getLocation();
+	checkPreAuth();
+	//getLocation();
 }
 
 function getLocation() {
-	$("#debug").append("  in getlocation");
+	//$("#debug").append("  in getlocation");
 	
     var success = function(position) {                          
          location = position.coords;
-         $("#debug").append("  in getlocation success");
+         //$("#debug").append("  in getlocation success");
     };
     var fail = function(e) {
     	navigator.notification.alert("Please Switch on the Location Services", function() {

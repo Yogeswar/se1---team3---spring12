@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Create a nice login form using CSS3 and HTML5</title>
+<title>SalesAssist - Log In</title>
 
 <script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script>
 
@@ -46,7 +46,7 @@
 				resizeBg();
 			}).trigger("resize");
 		
-		});
+		}); 
 	</script>
 
 
@@ -56,7 +56,7 @@
 
 
 <body onload="init()">
-<img src="images/12.jpg" id="bg" alt="">
+<img src="images/bg.jpg" id="bg" alt="">
 <form id="loginForm" name="loginForm"  method="post" autocomplete=off>
 
 
@@ -65,26 +65,20 @@
 
     <fieldset id="inputs">
 
-        <input id="username" type="text" placeholder="Username" autofocus required class="validate[required]">   
+        <input id="username" type="text" placeholder="Username" autofocus required class="validate[required]" />   
 
-        <input id="password" type="password" placeholder="Password" required class="validate[required]">
+        <input id="password" type="password" placeholder="Password" required class="validate[required]" />
 
     </fieldset>
 
     <fieldset id="actions">
 
-        <input type="submit" id="submitButton" value="Log in" action="index.html">
-
-        <a href="">Forgot your password?</a><a href="main.html">Register</a>
+        <input type="submit" id="submitButton" value="Log In" />
 
     </fieldset>
 
 <div id="message"></div>
 </form>
-
-<div> id="debug"></div>
-
-<!-- BSA AdPacks code -->
 
 
 
