@@ -15,12 +15,6 @@
 <script src="js/Login.js"></script>
 <script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
-
-
-
-
-
-
 	<script>
 		$(function() {   
 		
@@ -38,52 +32,27 @@
 				    $bg
 				    	.removeClass()
 				    	.addClass('bgwidth');
-				}
-							
-			}
-			                   			
+				}				
+			}			
 			theWindow.resize(function() {
 				resizeBg();
 			}).trigger("resize");
-		
 		}); 
 	</script>
-
-
-
 </head>
-
-
-
 <body onload="init()">
 <img src="images/bg.jpg" id="bg" alt="">
 <form id="loginForm" name="loginForm"  method="post" autocomplete=off>
-
-
-
     <h1>Log In</h1>
-
     <fieldset id="inputs">
-
         <input id="username" type="text" placeholder="Username" autofocus required class="validate[required]" />   
-
         <input id="password" type="password" placeholder="Password" required class="validate[required]" />
-
     </fieldset>
-
     <fieldset id="actions">
-
         <input type="submit" id="submitButton" value="Log In" />
-
     </fieldset>
-
 <div id="message"></div>
 </form>
-
-
-
-
 </body>
-
 </html>
 
