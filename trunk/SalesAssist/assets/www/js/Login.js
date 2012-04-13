@@ -1,4 +1,5 @@
-var location;
+var latitude;
+var longitude;
 
 function init() 
 {
@@ -6,6 +7,10 @@ function init()
 	delete init;
 }
 
+function bypass()
+{
+	window.location = "main.html";
+}
 
 function Login() 
 {
@@ -15,8 +20,8 @@ function Login()
      // window.location = "main.html";
      var user = $("#username", this).val();
      var pwd = $("#password", this).val();
-     latitude = -67.53;
-     longitude = 107.23;
+     //latitude = -67.53;
+     //longitude = 107.23;
      if(user != '' && pwd != '') 
      {	
     	 //$("#debug").append(location.latitude + location.longitude);
@@ -69,15 +74,17 @@ function deviceReady()
 	//$("#loginForm").validationEngine('attach');
 	$("#loginForm").on("submit",Login);
 	checkPreAuth();
-	//getLocation();
+	getLocation();
 }
 
 function getLocation() {
 	//$("#debug").append("  in getlocation");
 	
     var success = function(position) {                          
-         location = position.coords;
-         //$("#debug").append("  in getlocation success");
+         latitude = position.coords.latitude;
+         longitude = position.coords.longitude;
+         navigator.notification.alert("Congrats geo-location is working");
+         
     };
     
     var fail = function(e) {
