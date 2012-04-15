@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SalesAssist - Contact Information</title>
+
+<!--  Styling Sheets -->
+<link rel="stylesheet" href="css/jquery.mobile-1.0.1.css" />
+<link rel="stylesheet" href="css/contact_info.css" />
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
+
+<!--  Javascript Libraries -->
+<script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script> 
+<script src="js/jquery-1.7.1.js"></script> 
+<script src="js/jquery.mobile-1.0.1.js"></script>
+<script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/ContactPage.js"></script>
+</head>
+
+<body>
+<div data-role="page" class="page" id="page">
+	<div data-role="header">
+		<h1 align="center">Contact Information</h1>
+	</div><!-- /header -->
+	<div align="right" id="tb">
+		<table id="button_table" cellspacing="10">
+		<tr>
+			<td>
+			<button type="reset" id="cancel" onClick="Cancel()">Cancel</button>
+			</td>
+			<td>
+			<button type="submit" id="save" onClick="SaveDate()">Save</button>
+			</td>
+			<td>
+			<button type="button" id="forward" onClick="Forward()">Next</button>
+			</td>
+		</tr>
+		</table>
+	</div>
+	<div id="content" data-role="content">
+	<div id="data" class="main">
+	<fieldset>
+	<legend>Company Information</legend>
+	<form id="data_form1">
+		<table id="cc_main" cellspacing="10">
+			<tr>
+				<th align="left">Company Name</th>
+				<th align="left">Type of Business</th>
+			</tr>
+			<tr>
+				<td>
+				<input type="text" id="Company Name" class="validate[required]" value="" placeholder="Company Name"/>
+				</td>
+				<td>
+				<input type="text" id="Type of Business" class="" value="" placeholder="Type of Business"/>
+				</td>		
+			</tr>
+			<tr>
+				<th align="left">Email</th>
+				<th align="left">Phone No.</th>
+			</tr>
+			<tr>
+				<td>
+				<input type="email" id="Email1" class="validate[required]" value="" placeholder="Email"/>
+				</td>
+				<td>
+				<input type="text" id="Phone1" class="" value="" placeholder="Phone No."/>
+				</td>	
+			</tr>
+			<tr>
+				<th align="left">Address Line 1:</th>
+				<td>
+				<input type="text" id="Address1" class="" value=""/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left">Address Line 2:</th>
+				<td>
+				<input type="text" id="Address2" class="" value=""/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left">State</th>
+				<th align="left">ZIP Code</th>
+			</tr>
+			<tr>
+				<td>
+				<input type="text" id="State" class="" value="" placeholder="State"/>
+				</td>
+				<td>
+				<input type="text" id="ZIP" class="" value="" placeholder="ZIP Code"/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left">What's the first time contact to Ayoka</th>
+				<td>
+				<input type="date" id="Time" class="" value=""/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left">How long have you used this product(year)</th>
+				<td>
+				<input type="number" id="Duration" class="" value=""/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left">Next appointment</th>
+				<td>
+				<input type="date" id="date" class="" value=""/>
+				</td>
+			</tr>
+		</table>	
+	</form>
+	</fieldset>
+	<p></p>
+	<fieldset>
+	<legend>Contact Person Information</legend>
+	<form id="data_form2">
+		<table id="cp_main" cellspacing="10">
+			<tr>
+				<th align="left">Name</th>
+				<td>
+				<input type="text" id="Contact Name" class="validate[required]" value="" placeholder="Contact Name"/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left">Phone Number</th>
+				<td>
+				<input type="text" id="Phone2" class="validate[required]" value="" placeholder="Contact Phone No."/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left">Email</th>
+				<td>
+				<input type="email" id="Email2" class="validate[required]" value="" placeholder="Contact Email"/>
+				</td>
+				</tr>
+		</table>
+	</form>
+	</fieldset>
+	</div>
+	<div id="list" data-role="content">
+	<fieldset>
+	<legend>Business List</legend>
+	<ol>
+  		<li>McDonald</li>
+  		<li>Jack In Box</li>
+  		<li>Starbucks</li>
+	</ol>
+	</fieldset>
+	</div>
+	</div>
+</div>
+</body>
+</html>

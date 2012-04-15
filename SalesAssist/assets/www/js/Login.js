@@ -37,7 +37,7 @@ function Login()
     		 {
     			 window.localStorage["username"] = user;
     			 window.localStorage["password"] = pwd;
-    			 window.location = "main.html";
+    			 window.location = "contact.html";
     			 //$.mobile.changePage("main.html");
     		 } 
     		 else 

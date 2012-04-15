@@ -1,0 +1,24 @@
+<style type="text/css">
+
+#content {
+padding: 0px;
+width: 800px;
+
+}
+#content #data {
+padding: 0px;
+float: left;
+width: 450px;
+height: 720px;
+}
+#content #list {
+float: left;
+height: 300px;
+width: 350px;
+}
+#data #cc_main.td{
+	width:450px;
+}
+#data #cp_main.td{
+	width:450px;
+}

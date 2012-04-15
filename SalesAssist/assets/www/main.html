@@ -31,6 +31,7 @@
 <div data-role="header">
 		<h1> SalesAssist </h1>
 </div><!-- /header -->
+<div id="combine">
 <div id="data" id="data" class="main" data-role="content">
 <div id="cust_data" class="cust_data">
 <table class="s_main" cellspacing="15">
@@ -47,16 +48,16 @@
 				<input type="text" id="Contact" class="" value="" placeholder="Contact"/>
 			</td>
 			<td >
-				<input type="number" id="Phone" class="" value="" placeholder="Phone No." />
+				<input type="text" id="Phone" class="" value="" placeholder="Phone No." />
 			</td>		
 		</tr>
 </table>
 </div>
 <p></p>
 <fieldset>
-<legend><font size="5">Business Profile</font></legend>
+<legend>Business Profile</legend>
 	<form id="data_form">
-	<table class="t_main" align="center">
+	<table class="t_main" align="center" cellspacing="10">
 		<tr class="t_row" id="t_label">
 			<th>Credit Card</th>
 			<th>Amount per Month</th>
@@ -156,7 +157,7 @@
 	</table>
 	</form>
 	<div id="total_buss"><font size="4" face="arial"></font> </div>
-	<div id="Average_Ticket_Size"><font size="4" face="arial"></font> </div>
+	<div id="Average_Ticket_Size"><font size="4" face="arial"></font></div>
 </fieldset>
 </div>
 
@@ -168,6 +169,7 @@
 	    <div class="h_chart" id="h_chart">
 		</div>
 	</div>
+</div>
 </div>
 <script type="text/javascript">
 $("#data_form").validationEngine('attach');

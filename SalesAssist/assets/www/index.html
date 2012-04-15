@@ -15,30 +15,25 @@
 <script src="js/Login.js"></script>
 <script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
-	<script>
-		$(function() {   
+<script>
+	$(function() {   
 		
-			var theWindow        = $(window),
-			    $bg              = $("#bg"),
-			    aspectRatio      = $bg.width() / $bg.height();
+		var theWindow = $(window),
+		    $bg = $("#bg"),
+		 	aspectRatio = $bg.width() / $bg.height();
 			    			    		
-			function resizeBg() {
+		function resizeBg() {
 				
-				if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
-				    $bg
-				    	.removeClass()
-				    	.addClass('bgheight');
-				} else {
-				    $bg
-				    	.removeClass()
-				    	.addClass('bgwidth');
-				}				
-			}			
-			theWindow.resize(function() {
-				resizeBg();
-			}).trigger("resize");
-		}); 
-	</script>
+			if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+			    $bg.removeClass().addClass('bgheight');
+			} 
+			else {
+			    $bg.removeClass().addClass('bgwidth');
+			}				
+		}			
+		theWindow.resize(function(){resizeBg();}).trigger("resize");
+	}); 
+</script>
 </head>
 <body onload="init()">
 <img src="images/bg.jpg" id="bg" alt="">
@@ -52,7 +47,6 @@
         <input type="submit" id="submitButton" value="Log In" />
         <button type="button" onclick="bypass()">Bypass Log-in(for testing)</button>
     </fieldset>
-<div id="message"></div>
 </form>
 </body>
 </html>
