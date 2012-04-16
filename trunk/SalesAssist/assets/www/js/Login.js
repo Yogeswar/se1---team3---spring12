@@ -2,7 +2,7 @@
 function init() 
 {
 	window.latitude = 32.78;
-	window.longitude = 96.80;
+	window.longitude = -96.80;
 	document.addEventListener("deviceready", deviceReady, true);
 	//delete init;
 }
