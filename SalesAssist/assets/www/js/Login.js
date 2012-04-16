@@ -1,15 +1,15 @@
-var latitude;
-var longitude;
 
 function init() 
 {
+	window.latitude = 32.78;
+	window.longitude = 96.80;
 	document.addEventListener("deviceready", deviceReady, true);
-	delete init;
+	//delete init;
 }
 
 function bypass()
 {
-	window.location = "main.html";
+	window.location = "contact.html";
 }
 
 function Login() 
@@ -18,25 +18,28 @@ function Login()
      //disable the Submit button so we can't resubmit while we wait
      $("#submitButton",this).attr("disabled","disabled");
      // window.location = "main.html";
-     var user = $("#username", this).val();
-     var pwd = $("#password", this).val();
-     //latitude = -67.53;
-     //longitude = 107.23;
-     if(user != '' && pwd != '') 
+     if(window.user=='' && window.pwd == '')
+     {
+    	 window.user = $("#username", this).val();
+    	 window.pwd = $("#password", this).val(); 
+     }
+     if(window.user != '' && window.pwd != '') 
      {	
     	 //$("#debug").append(location.latitude + location.longitude);
     	 $.ajaxSetup({
     		  error: function(xhr, status, error) {
     		navigator.notification.alert("An AJAX error occured: " + status + "\nError: " + error + "response" + xhr.responseText);
+    		$("#submitButton").removeAttr("disabled");
     		  }
     		});
-    	 $.post("http://sales3.web44.net/login.php", 
-    			{username:user,password:pwd,lat:latitude,long:longitude}, 
+    	 $.post("http://sales3.web44.net/login.php",
+    	 //$.post("http://10.0.2.2:8081/SalesAssist/login.php",
+    			{username:window.user,password:window.pwd,lat:window.latitude,long:window.longitude}, 
     		function(result) {
     		 if(result.login == 'true') 
     		 {
-    			 window.localStorage["username"] = user;
-    			 window.localStorage["password"] = pwd;
+    			 window.localStorage["username"] = window.user;
+    			 window.localStorage["password"] = window.pwd;
     			 window.location = "contact.html";
     			 //$.mobile.changePage("main.html");
     		 } 
@@ -64,7 +67,14 @@ function checkPreAuth()
 		{
 		 	$("#username", form).val(window.localStorage["username"]);
 		 	$("#password", form).val(window.localStorage["password"]);
-		 	//Login();
+		 	window.user=window.localStorage["username"];
+		 	window.pwd=window.localStorage["password"];
+		 	Login();
+		}
+		 else
+		{
+			 window.user='';
+			 window.pwd='';
 		}
 	}
 }
@@ -73,7 +83,6 @@ function deviceReady()
 {
 	//$("#loginForm").validationEngine('attach');
 	$("#loginForm").on("submit",Login);
-	checkPreAuth();
 	getLocation();
 }
 
@@ -81,9 +90,10 @@ function getLocation() {
 	//$("#debug").append("  in getlocation");
 	
     var success = function(position) {                          
-         latitude = position.coords.latitude;
-         longitude = position.coords.longitude;
+         window.latitude = position.coords.latitude;
+         window.longitude = position.coords.longitude;
          navigator.notification.alert("Congrats geo-location is working");
+         checkPreAuth();
          
     };
     
