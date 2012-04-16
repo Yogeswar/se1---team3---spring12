@@ -10,6 +10,8 @@ $db_username="root"; // Mysql username
 $db_password=""; // Mysql password 
 $db_name="SalesAssist"; // Database name 
 $db_tbl_name="User_data"; // Table name
+$db_tbl_loc="Emp_curr_loc"; //Employee current location table
+$db_tbl_loc_hist="Emp_loc_history";
 
 // Connect to server and select databse.
 $mysql_con = mysql_connect("$db_host", "$db_username", "$db_password");
@@ -25,7 +27,7 @@ $password=$_POST['password'];
 $lat=$_POST['lat'];
 $long=$_POST['long'];
 
-// To protect MySQL injection (more detail about MySQL injection )
+// To protect MySQL injection 
 $username = stripslashes($username);
 $password = stripslashes($password);
 $lat = stripslashes($lat);
@@ -44,9 +46,22 @@ $count=mysql_num_rows($result);
 
 if($count==1)
 {
-	$update_sql="UPDATE $db_tbl_name SET latitude = $lat, longitude = $long, update_time = time()
-				 WHERE Employee_Id='$username' and password='$password'";
-	$result=mysql_query($update_sql);
+	$select_sql="SELECT * FROM $db_tbl_loc WHERE Employee_Id='$username'";
+	$result=mysql_query($select_sql);
+	$count=mysql_num_rows($result);
+	if($count==1)
+	{	
+		$update_sql="UPDATE $db_tbl_loc SET latitude=$lat, longitude=$long
+					WHERE Employee_Id='$username'";
+		$result=mysql_query($update_sql);
+	}
+	else
+	{	
+		$insert_sql="INSERT INTO $db_tbl_loc (Employee_Id, latitude, longitude) VALUES ('$username' , $lat, $long)";
+		$result=mysql_query($insert_sql);
+	}
+	$insert_sql="INSERT INTO $db_tbl_loc_hist (Employee_Id, latitude, longitude) VALUES ('$username' , $lat, $long)";
+	$result=mysql_query($insert_sql);
 	// Register $myusername, $mypassword and redirect to file "login_success.php"
 	//session_register("myusername");
 	//session_register("mypassword"); 
