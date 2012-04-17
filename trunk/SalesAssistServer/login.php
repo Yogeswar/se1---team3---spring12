@@ -5,10 +5,10 @@ header('Cache-Control: no-cache, must-revalidate');
 header('Content-type: application/json');
 
 ob_start();
-$db_host="localhost"; // Host name 
-$db_username="root"; // Mysql username 
-$db_password=""; // Mysql password 
-$db_name="SalesAssist"; // Database name 
+$db_host="mysql1.000webhost.com"; // Host name 
+$db_username="a1886827_s3"; // Mysql username 
+$db_password="xyz123"; // Mysql password 
+$db_name="a1886827_s3"; // Database name 
 $db_tbl_name="User_data"; // Table name
 $db_tbl_loc="Emp_curr_loc"; //Employee current location table
 $db_tbl_loc_hist="Emp_loc_history";
@@ -36,6 +36,7 @@ $username = mysql_real_escape_string($username);
 $password = mysql_real_escape_string($password);
 $long = mysql_real_escape_string($long);
 $lat = mysql_real_escape_string($lat);
+
 
 $sql="SELECT * FROM $db_tbl_name WHERE Employee_Id='$username' and password='$password'";
 $result=mysql_query($sql);
