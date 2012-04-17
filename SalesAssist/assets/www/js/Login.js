@@ -18,7 +18,7 @@ function Login()
      //disable the Submit button so we can't resubmit while we wait
      $("#submitButton",this).attr("disabled","disabled");
      // window.location = "main.html";
-     if(window.user=='' && window.pwd == '')
+     if(window.user==undefined && window.pwd == undefined)
      {
     	 window.user = $("#username", this).val();
     	 window.pwd = $("#password", this).val(); 
@@ -40,6 +40,7 @@ function Login()
     		 {
     			 window.localStorage["username"] = window.user;
     			 window.localStorage["password"] = window.pwd;
+    			 window.localStorage["loggedin"] = "yes";
     			 window.location = "contact.html";
     			 //$.mobile.changePage("main.html");
     		 } 
@@ -83,7 +84,10 @@ function deviceReady()
 {
 	//$("#loginForm").validationEngine('attach');
 	$("#loginForm").on("submit",Login);
-	getLocation();
+	if(window.localStorage["loggedin"] == undefined || window.localStorage["loggedin"] == "")
+	{
+		getLocation();
+	}
 }
 
 function getLocation() {
@@ -105,7 +109,7 @@ function getLocation() {
     	
     };
     
-    var options = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+    var options = {enableHighAccuracy: true };
     
     navigator.geolocation.getCurrentPosition(success, fail, options);
 } 

@@ -15,3 +15,12 @@ function Cancel(){
 	        } 
 	    } 
 }
+
+function SaveDate(){
+	
+/*	$.post("http://sales3.web44.net/savecustomer.php",
+	    	 //$.post("http://10.0.2.2:8081/SalesAssist/savecustomer.php",
+			$("#cust_form").serialize(), 
+	    		function(result) {  	 });
+	     } */
+}
