@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>SalesAssist</title>
+<title >SalesAssist</title>
 
 <!--  Styling Sheets -->
 <link rel="stylesheet" href="css/jquery.mobile-1.0.1.css" />
@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
 
 <!--  Javascript Libraries -->
-<script type="text/javascript" charset="utf-8" src="js/cordova.js"></script> 
+<script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script> 
 <script src="js/jquery-1.7.1.js"></script> 
 <script src="js/jquery.mobile-1.0.1.js"></script>
 <script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
@@ -29,9 +29,11 @@
 
 <div data-role="page" class="page">
 <div data-role="header">
-		<h1> SalesAssist </h1>
+
+<h1> SALES ASSIST </h1>
+
+		
 </div><!-- /header -->
-<div id="combine">
 <div id="data" id="data" class="main" data-role="content">
 <div id="cust_data" class="cust_data">
 <table class="s_main" cellspacing="15">
@@ -48,21 +50,25 @@
 				<input type="text" id="Contact" class="" value="" placeholder="Contact"/>
 			</td>
 			<td >
-				<input type="text" id="Phone" class="" value="" placeholder="Phone No." />
+				<input type="number" id="Phone" class="" value="" placeholder="Phone No." />
 			</td>		
 		</tr>
 </table>
 </div>
 <p></p>
 <fieldset>
-<legend>Business Profile</legend>
+
+
+
 	<form id="data_form">
-	<table class="t_main" align="center" cellspacing="10">
+	<table class="t_main" align="center">
 		<tr class="t_row" id="t_label">
+		
 			<th>Credit Card</th>
 			<th>Amount per Month</th>
 			<th>Transactions per Month</th>
 			<th>Fees in Percent</th>
+			
 		</tr>
 		<tr class="t_row" id="t_r1">
 			<td class="t_card" id="card1">
@@ -157,19 +163,18 @@
 	</table>
 	</form>
 	<div id="total_buss"><font size="4" face="arial"></font> </div>
-	<div id="Average_Ticket_Size"><font size="4" face="arial"></font></div>
+	<div id="Average_Ticket_Size"><font size="4" face="arial"></font> </div>
 </fieldset>
 </div>
 
-<div class="chart" id="chart" data-role="content" style="height: 500px; width: 500px">
-	    <p><font size="5" color="blue">Analysis Charts</font></p>
+<div class="chart" id="chart" data-role="content" style="height: 505px; width: 500px">
+	    
 	    <div class="p_chart" id="p_chart">
 		</div>
 		<p></p>
 	    <div class="h_chart" id="h_chart">
 		</div>
 	</div>
-</div>
 </div>
 <script type="text/javascript">
 $("#data_form").validationEngine('attach');
