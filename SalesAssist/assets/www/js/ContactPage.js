@@ -1,5 +1,5 @@
 
-function Forward(){
+function nextpage(){
 	window.location = "main.html";
 }
 
