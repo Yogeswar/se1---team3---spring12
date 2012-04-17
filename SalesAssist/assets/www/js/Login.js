@@ -99,6 +99,7 @@ function getLocation() {
     
     var fail = function(e) {
     	navigator.notification.alert("Please Switch on the Location Services", function() {
+    	// Below Line commented to aid testing. Will be uncommented on delivery. Will quit the application
     	//navigator.app.exitApp(); 
     	}, "Location Required", "Close");
     	
