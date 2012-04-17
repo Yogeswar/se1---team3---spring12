@@ -104,5 +104,7 @@ function getLocation() {
     	
     };
     
-    navigator.geolocation.getCurrentPosition(success, fail);
+    var options = {maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+    
+    navigator.geolocation.getCurrentPosition(success, fail, options);
 } 
