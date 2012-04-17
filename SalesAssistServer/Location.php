@@ -9,10 +9,10 @@
   </script>
 <?php 
 ob_start();
-$db_host="localhost"; // Host name 
-$db_username="root"; // Mysql username 
-$db_password=""; // Mysql password 
-$db_name="SalesAssist"; // Database name 
+$db_host="mysql1.000webhost.com"; // Host name 
+$db_username="a1886827_s3"; // Mysql username 
+$db_password="xyz123"; // Mysql password 
+$db_name="a1886827_s3"; // Database name 
 $db_tbl_loc="Emp_curr_loc"; //Employee current location table
 $db_tbl_name="User_data"; // Table name
 ?>
