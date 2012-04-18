@@ -44,10 +44,7 @@
 	<legend>Company Information</legend>
 	<form id="data_form1">
 		<table id="cc_main" cellspacing="10">
-			<tr>
-				<th align="left">Company Name</th>
-				<th align="left">Type of Business</th>
-			</tr>
+			
 			<tr>
 				<td>
 				<input type="text" id="Company Name" class="validate[required]" value="" placeholder="Company Name"/>
@@ -56,10 +53,7 @@
 				<input type="text" id="Type of Business" class="" value="" placeholder="Type of Business"/>
 				</td>		
 			</tr>
-			<tr>
-				<th align="left">Email</th>
-				<th align="left">Phone No.</th>
-			</tr>
+			
 			<tr>
 				<td>
 				<input type="email" id="Email1" class="validate[required]" value="" placeholder="Email"/>
@@ -80,10 +74,7 @@
 				<input type="text" id="Address2" class="" value=""/>
 				</td>
 			</tr>
-			<tr>
-				<th align="left">State</th>
-				<th align="left">ZIP Code</th>
-			</tr>
+			
 			<tr>
 				<td>
 				<input type="text" id="State" class="" value="" placeholder="State"/>
@@ -93,19 +84,15 @@
 				</td>
 			</tr>
 			<tr>
-				<th align="left">What's the first time contact to Ayoka</th>
+				<th align="left">First time of contact to customer:</th>
 				<td>
 				<input type="date" id="Time" class="" value=""/>
 				</td>
 			</tr>
+			
 			<tr>
-				<th align="left">How long have you used this product(year)</th>
-				<td>
-				<input type="number" id="Duration" class="" value=""/>
-				</td>
-			</tr>
-			<tr>
-				<th align="left">Next appointment</th>
+				<th align="left">Next appointment:</th>
+				
 				<td>
 				<input type="date" id="date" class="" value=""/>
 				</td>
@@ -141,15 +128,14 @@
 	</fieldset>
 	</div>
 	<div id="list" data-role="content">
-	<fieldset>
-	<legend>Business List</legend>
-	<ol>
-  		<li>McDonald</li>
-  		<li>Jack In Box</li>
-  		<li>Starbucks</li>
-	</ol>
-	</fieldset>
-	</div>
+	<label>Business List::</label>
+<select>
+  <option value="md">McDonald</option>
+  <option value="jb">Jack In Box</option>
+  <option value="sb">Starbucks</option>
+  </select>
+</div>
+	
 	</div>
 </div>
 </body>
