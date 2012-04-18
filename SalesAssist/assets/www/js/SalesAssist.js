@@ -23,12 +23,13 @@
         var options = {
         	title: 'Business Split-Up',
         	is3D: true,
-        	backgroundColor: '#E0E0E0'
+        	backgroundColor: '#E0E0E0',
+        	chartArea: {left:35,top:35,width:"85%",height:"85%"}
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('p_chart'));
 		options['width'] = 400;
-        options['height'] = 200;
+        options['height'] = 250;
         chart.draw(data, options);
       }
     
@@ -45,12 +46,13 @@
           title: 'Weighted Average of Fees paid',
           hAxis: {title: 'Current vs Projected', titleTextStyle: {color: 'red'}},
           is3D: true,
-          backgroundColor: '#E0E0E0'
+          backgroundColor: '#E0E0E0',
+          chartArea: {left:35,top:25,width:"50%",height:"70%"},
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('h_chart'));
 		options['width'] = 400;
-        options['height'] = 300;
+        options['height'] = 200;
         chart.draw(data, options);
       }
     
