@@ -39,86 +39,75 @@
 	<div id="content" data-role="content">
 	<div id="data" class="main">
 	<fieldset>
-	<legend>Company Information</legend>
+	<legend>Contact Information (* is required)</legend>
 	<form id="data_form1">
-		<table id="cc_main" cellspacing="10">
-			
+		<table id="cc_main" cellspacing="15">
 			<tr>
-				<td>
-				<input type="text" id="Company Name" class="validate[required]" value="" placeholder="Company Name"/>
-				</td>
-				<td>
-				<input type="text" id="Type of Business" class="" value="" placeholder="Type of Business"/>
-				</td>		
+				<th align="left">Company Name*</th>
+				<th align="left">Type of Business</th>
+				<th align="left">Phone Number*</th>
 			</tr>
-			
 			<tr>
 				<td>
-				<input type="email" id="Email1" class="validate[required]" value="" placeholder="Email"/>
+				<input type="text" id="CompanyName" class="validate[required]" value="" placeholder="Jack In the Box"/>
 				</td>
 				<td>
-				<input type="text" id="Phone1" class="" value="" placeholder="Phone No."/>
+				<input type="text" id="BusinessTyper" class="" value="" placeholder="Restaurant"/>
+				</td>		
+				<td>
+				<input type="text" id="Phone1" class="validate[required]" value="" placeholder="1234567890"/>
+				</td>
+			</tr>
+			<tr>
+				<th align="left" colspan=2>Email*</th>
+				<th align="left">Appointment Time*</th>
+			</tr>
+			<tr>
+				<td colspan=2>
+				<input type="text" id="Email1" class="validate[required]" value="" placeholder="example@gmail.com"/>
+				</td>
+				<td>
+				<input type="text" id="AppDate" class="validate[required]" value="" placeholder="04/17/2012"/>
 				</td>	
 			</tr>
 			<tr>
-				<th align="left">Address Line 1:</th>
-				<td>
-				<input type="text" id="Address1" class="" value=""/>
+				<th align="left">Address:</th>
+			</tr>
+			<tr>
+				<td colspan=3>
+				<input type="text" id="Address" class="" value="" placeholder="201 UTA Blvd,Arlington,TX 76019"/>
 				</td>
 			</tr>
 			<tr>
-				<th align="left">Address Line 2:</th>
+				<th align="left" colspan=2>What's the first time contact to Ayoka*</th>
 				<td>
-				<input type="text" id="Address2" class="" value=""/>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-				<input type="text" id="State" class="" value="" placeholder="State"/>
-				</td>
-				<td>
-				<input type="text" id="ZIP" class="" value="" placeholder="ZIP Code"/>
+				<input type="text" id="Time" class="" value="" placeholder="08/2009"/>
 				</td>
 			</tr>
 			<tr>
-				<th align="left">First time of contact to customer:</th>
+				<th align="left" colspan=2>How long have you used this product(year)*</th>
 				<td>
-				<input type="date" id="Time" class="" value=""/>
+				<input type="number" id="Duration" class="" value="" placeholder="2"/>
 				</td>
 			</tr>
-			
+			<tr></tr>
 			<tr>
-				<th align="left">Next appointment:</th>
-				
-				<td>
-				<input type="date" id="date" class="" value=""/>
-				</td>
-			</tr>
-		</table>	
-	</form>
-	</fieldset>
-	<p></p>
-	<fieldset>
-	<legend>Contact Person Information</legend>
-	<form id="data_form2">
-		<table id="cp_main" cellspacing="10">
-			<tr>
-				<th align="left">Name</th>
-				<td>
-				<input type="text" id="Contact Name" class="validate[required]" value="" placeholder="Contact Name"/>
-				</td>
+				<th align="left" colspan=3>Representative Information</th>
 			</tr>
 			<tr>
-				<th align="left">Phone Number</th>
-				<td>
-				<input type="text" id="Phone2" class="validate[required]" value="" placeholder="Contact Phone No."/>
-				</td>
-			</tr>
-			<tr>
+				<th align="left">Name*</th>
+				<th align="left">Phone Number*</th>
 				<th align="left">Email</th>
+			</tr>
+			<tr>
 				<td>
-				<input type="email" id="Email2" class="validate[required]" value="" placeholder="Contact Email"/>
+				<input type="text" id="ContactName" class="validate[required]" value="" placeholder="John Smith"/>
+				</td>
+				<td>
+				<input type="text" id="Phone2" class="validate[required]" value="" placeholder="1234567890"/>
+				</td>
+				<td>
+				<input type="text" id="Email2" class="" value="" placeholder="example@gmail.com"/>
 				</td>
 				</tr>
 		</table>
