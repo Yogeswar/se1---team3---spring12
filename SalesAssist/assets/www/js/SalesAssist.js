@@ -7,6 +7,16 @@
 	var fee_amt = new Array(4);
 	var Total;
     
+	function GoBack() {
+		window.location="contact.html";
+	}
+	
+	fuction LogOut() {
+		navigator.notification.confirm("Confirm Exit Application?", function() {
+	    	navigator.app.exitApp(); 
+	    	}, "Log Out", "OK,Cancel");
+	}
+	
     function drawPieChart() {
     
     	
