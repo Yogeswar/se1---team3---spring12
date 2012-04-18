@@ -1,25 +1,18 @@
 <style type="text/css">
 
 #content {
-padding: 0px;
+padding-left: 10px;
 width: 800px;
-
+cellspacing: 10px;
 }
 #content #data {
-padding: 0px;
+padding-left: 35px;
 float: left;
-width: 450px;
-height: 720px;
+width: 60%;
+height: 570px;
 }
 #content #list {
 float: left;
-padding: 0px;
-width: 250px;
-height: 200px;
-}
-#data #cc_main.td{
-	width:450px;
-}
-#data #cp_main.td{
-	width:450px;
+height: 300px;
+width: 200px;
 }
