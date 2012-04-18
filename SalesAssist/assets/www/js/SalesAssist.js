@@ -55,26 +55,49 @@
       }
     
     function loadValues(){
-    	card[0] = $("#select_card_1").val();
-		amount[0] = parseFloat($("#amount1").val());
-		transactions[0] = parseInt($("#transactions1").val());
-		fees[0] = parseFloat($("#fees1").val());
-
-		card[1] = $("#select_card_2").val();
-		amount[1] = parseFloat($("#amount2").val());
-		transactions[1] = parseInt($("#transactions2").val());
-		fees[1] = parseFloat($("#fees2").val());
-		
-		card[2] = $("#select_card_3").val();
-		amount[2] = parseFloat($("#amount3").val());
-		transactions[2] = parseInt($("#transactions3").val());
-		fees[2] = parseFloat($("#fees3").val());
-		
-		card[3] = $("#select_card_4").val();
-		amount[3] = parseFloat($("#amount4").val());
-		transactions[3] = parseInt($("#transactions4").val());
-		fees[3] = parseFloat($("#fees4").val());
-
+    	
+    	card[0] = "VISA";
+    	card[1] = "MasterCard";
+    	card[2] = "AmEx";
+    	card[3] = "Discover";
+    	
+    	for(i=1;i<=4;i++)
+    	{
+        	Select_card = "#Select_card" + i;
+        	amount_no = "#amount" + i;
+        	trans = "#transactions" + i;
+        	fee = "#fees" + i;
+        	j= i-1;
+        	
+        	if($(amount_no).val() != "")
+    		{
+    			amount[j] = parseFloat($(amount_no).val());
+    		}
+    		else 
+    		{
+    			amount[j] = 0;
+    		}
+    		
+    		if($(trans).val() != "")
+    		{
+    			transactions[j] = parseInt($(trans).val());
+    		}
+    		else
+    		{
+    			transactions[j] = 0;
+    		}
+    		
+    		if($(fee).val() != "")
+    		{
+    			fees[j] = parseFloat($(fee).val());
+    		}
+    		else
+    		{
+    			fees[j] = 0;
+    		}
+    		
+    	}
+    	
     }
     
     function calculate(){
@@ -92,7 +115,7 @@
     	   	var Avg_ticket_size = Total / Total_trans;
     	   	Avg_ticket_size = Avg_ticket_size.toFixed(2);
     	   	if (Avg_ticket_size > 0)
-    	   		$("#Average_Ticket_Size").text("Average Ticket Size : $" + Avg_ticket_size);
+    	   		$("#Average_Ticket_Size").text("$" + Avg_ticket_size);
     	}
     	else
     	{
