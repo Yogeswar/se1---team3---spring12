@@ -11,7 +11,7 @@
 		window.location="contact.html";
 	}
 	
-	function LogOut() {
+	function leave() {
 		navigator.notification.confirm("Confirm Exit Application?", function() {
 	    	navigator.app.exitApp(); 
 	    	}, "Log Out", "OK,Cancel");
