@@ -4,6 +4,7 @@ function nextpage(){
 }
 
 function Cancel(){
+	navigator.notification.alert("Cancel");
 	var post = document.myform;
 	post.submit();
 	var   e=document.getElementsByTagName("input"); 
@@ -16,8 +17,8 @@ function Cancel(){
 	    } 
 }
 
-function SaveDate(){
-	
+function savepage(){
+	navigator.notification.alert("Save");
 /*	$.post("http://sales3.web44.net/savecustomer.php",
 	    	 //$.post("http://10.0.2.2:8081/SalesAssist/savecustomer.php",
 			$("#cust_form").serialize(), 

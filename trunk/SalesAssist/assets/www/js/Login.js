@@ -84,32 +84,28 @@ function deviceReady()
 {
 	//$("#loginForm").validationEngine('attach');
 	$("#loginForm").on("submit",Login);
-	if(window.localStorage["loggedin"] == undefined || window.localStorage["loggedin"] == "")
-	{
-		getLocation();
-	}
+	
+	getLocation();
 }
 
 function getLocation() {
-	//$("#debug").append("  in getlocation");
 	
-    var success = function(position) {                          
+	var options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+    
+    navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+	
+	function onSuccess(position) {                          
          window.latitude = position.coords.latitude;
          window.longitude = position.coords.longitude;
-         navigator.notification.alert("Congrats geo-location is working");
-         checkPreAuth();
-         
-    };
+         navigator.notification.alert("Congrats geo-location is working", function(){checkPreAuth();});
+    }
     
-    var fail = function(e) {
+    function onError(error) {
     	navigator.notification.alert("Please Switch on the Location Services", function() {
     	// Below Line commented to aid testing. Will be uncommented on delivery. Will quit the application
     	//navigator.app.exitApp(); 
     	}, "Location Required", "Close");
-    	
-    };
+    }
     
-    var options = {enableHighAccuracy: true };
     
-    navigator.geolocation.getCurrentPosition(success, fail, options);
 } 
