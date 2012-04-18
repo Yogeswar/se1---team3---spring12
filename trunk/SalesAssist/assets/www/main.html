@@ -64,106 +64,99 @@
 	<table class="t_main" align="center">
 		<tr class="t_row" id="t_label">
 		
-			<th>Credit Card</th>
-			<th>Amount per Month</th>
-			<th>Transactions per Month</th>
-			<th>Fees in Percent</th>
+			<th>CC</th>
+			<th>Amt per Mth</th>
+			<th>Trans per Mth</th>
+			<th>Fees in %</th>
 			
 		</tr>
 		<tr class="t_row" id="t_r1">
-			<td class="t_card" id="card1">
-				<select class="d_select d_change" id="select_card_1">
-					<option value="visa" selected="selected">VISA</option>
-					<option value="mc">MasterCard</option>
-					<option value="Discover">Discover</option>
-					<option value="Amex">AMEX</option>
-				</select>
+			<td class="t_card" id="card1" align="center">
+				<b>VISA</b>
 			</td>
 			<td>
-				<input type="number" id="amount1" class="validate[required,custom[number],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="amount1" class="validate[required,custom[number],min[0]] d_text  d_change" value="" />
 			</td>
 			<td>
-				<input type="number" id="transactions1" class="validate[required,custom[integer],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="transactions1" class="validate[required,custom[integer],min[0]] d_text  d_change" value="" />
 			</td>
 			<td>
-				<input type="number" id="fees1" class="validate[required,custom[number],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="fees1" class="validate[required,custom[number],min[0]] d_text  d_change" value="" />
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r2">
-			<td class="t_card" id="card2">
-				<select class="d_select d_change" id="select_card_2">
-					<option value="visa">VISA</option>
-					<option value="mc" selected="selected">MasterCard</option>
-					<option value="Discover">Discover</option>
-					<option value="Amex">AMEX</option>
-				</select>
+			<td class="t_card" id="card2" align="center">
+				<b>MasterCard</b>
 			</td>
 			<td>
-				<input type="number" id="amount2" class="validate[required,custom[number],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="amount2" class="validate[required,custom[number],min[0]] d_text  d_change" value="" />
 			</td>
 			<td>
-				<input type="number" id="transactions2" class="validate[required,custom[integer],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="transactions2" class="validate[required,custom[integer],min[0]] d_text  d_change" value="" />
 			</td>
 			<td>
-				<input type="number" id="fees2" class="validate[required,custom[number],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="fees2" class="validate[required,custom[number],min[0]] d_text  d_change" value="" />
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r3">
-			<td class="t_card" id="card3">
-				<select class="d_select d_change" id="select_card_3">
-					<option value="visa">VISA</option>
-					<option value="mc">MasterCard</option>
-					<option value="Discover" selected="selected">Discover</option>
-					<option value="Amex">AMEX</option>
-				</select>
+			<td class="t_card" id="card3" align="center">
+					<b>Discover</b>
 			</td>
 			<td>
-				<input type="number" id="amount3" class="validate[required,custom[number],min[0]] d_text  d_change"  value="0"/>
+				<input type="number" id="amount3" class="validate[required,custom[number],min[0]] d_text  d_change" value=""/>
 			</td>
 			<td>
-				<input type="number" id="transactions3" class="validate[required,custom[integer],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="transactions3" class="validate[required,custom[integer],min[0]] d_text  d_change" value="" />
 			</td>
 			<td>
-				<input type="number" id="fees3" class="validate[required,custom[number],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="fees3" class="validate[required,custom[number],min[0]] d_text  d_change" value="" />
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r4">
-			<td class="t_card" id="card4">
-				<select class="d_select d_change" id="select_card_4">
-					<option value="visa">VISA</option>
-					<option value="mc">MasterCard</option>
-					<option value="Discover">Discover</option>
-					<option value="Amex" selected="selected">AMEX</option>
-				</select>
+			<td class="t_card" id="card4" align="center">
+				<b>AMEX</b>
 			</td>
 			<td>
-				<input type="number" id="amount4" class="validate[required,custom[number],min[0]] d_text  d_change"  value="0"/>
+				<input type="number" id="amount4" class="validate[required,custom[number],min[0]] d_text  d_change"  value=""/>
 			</td>
 			<td>
-				<input type="number" id="transactions4" class="validate[required,custom[integer],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="transactions4" class="validate[required,custom[integer],min[0]] d_text  d_change" value="" />
 			</td>
 			<td>
-				<input type="number" id="fees4" class="validate[required,custom[number],min[0]] d_text  d_change" value="0" />
+				<input type="number" id="fees4" class="validate[required,custom[number],min[0]] d_text  d_change" value="" />
 			</td>		
 		</tr>
 		<tr class="t_row" id="t_r5" align="center">
-			<td align="center">
+			<td align="center" class="bold">
 				<div><b>Total : </b></div>
 			</td>
-			<td align="center">
+			<td align="center" class="bold">
 				<div id="total_buss"></div>
 			</td>
 			<td align="center">
-				<div id="total_trans"></div>
+				<div id="total_trans" class="bold"></div>
+			</td>
+			<td align="center" class="bold">
+				<div id="Avg_fees_percent"></div>
+			</td>		
+		</tr>
+		<tr class="t_row" id="t_r6" align="center">
+			<td align="center" class="bold">
+				<div><b>Avg Tkt Size</b></div>
+			</td>
+			<td align="center" class="bold">
+				<div id="Average_Ticket_Size"></div>
 			</td>
 			<td align="center">
-				<div id="Avg_fees_percent"></div>
+				
+			</td>
+			<td align="center">
+				
 			</td>		
 		</tr>
 	</table>
 	</form>
-	<div id="total_buss"><font size="4" face="arial"></font> </div>
-	<div id="Average_Ticket_Size"><font size="4" face="arial"></font> </div>
+	
 </fieldset>
 </div>
 
