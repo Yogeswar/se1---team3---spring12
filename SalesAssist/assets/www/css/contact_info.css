@@ -13,8 +13,9 @@ height: 720px;
 }
 #content #list {
 float: left;
-height: 300px;
-width: 350px;
+padding: 0px;
+width: 250px;
+height: 200px;
 }
 #data #cc_main.td{
 	width:450px;
