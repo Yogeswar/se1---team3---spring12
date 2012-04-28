@@ -63,10 +63,6 @@ if($count==1)
 	}
 	$insert_sql="INSERT INTO $db_tbl_loc_hist (Employee_Id, latitude, longitude) VALUES ('$username' , $lat, $long)";
 	$result=mysql_query($insert_sql);
-	// Register $myusername, $mypassword and redirect to file "login_success.php"
-	//session_register("myusername");
-	//session_register("mypassword"); 
-	//header("location:login_success.php");
 	$response = array('login' => 'true');
 }
 else 
