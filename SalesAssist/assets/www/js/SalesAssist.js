@@ -33,7 +33,7 @@
         var options = {
         	title: 'Business Split-Up',
         	is3D: true,
-        	backgroundColor: '#E0E0E0',
+        	backgroundColor: '#e6e6e6',
         	chartArea: {left:35,top:35,width:"85%",height:"85%"}
         };
 
@@ -56,7 +56,7 @@
           title: 'Weighted Average of Fees paid',
           hAxis: {title: 'Current vs Projected', titleTextStyle: {color: 'red'}},
           is3D: true,
-          backgroundColor: '#E0E0E0',
+          backgroundColor: '#e6e6e6',
           chartArea: {left:35,top:25,width:"50%",height:"70%"},
         };
 
