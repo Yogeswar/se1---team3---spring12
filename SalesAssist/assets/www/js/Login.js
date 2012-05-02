@@ -1,9 +1,10 @@
 
 function init() 
 {
-	window.latitude = 32.78;
-	window.longitude = -96.80;
+	//window.latitude = 32.78;
+	//window.longitude = -96.80;
 	document.addEventListener("deviceready", deviceReady, true);
+	//deviceReady();
 	//delete init;
 }
 
@@ -21,7 +22,7 @@ function Login()
      if(window.user==undefined && window.pwd == undefined)
      {
     	 window.user = $("#username", this).val();
-    	 window.pwd = $("#password", this).val(); 
+    	 window.pwd = $().crypt({method:"sha1",source:$("#password", this).val()});
      }
      if(window.user != '' && window.pwd != '') 
      {	
